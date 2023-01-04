@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <title>Factorial</title>
+		<style>
+            *
+            {
+                padding: 0px;
+                margin: 25px;
+            }
+            #main
+            {
+                border : 6px solid lightslategray;
+                padding: 20px;
+            }
+			h2
+			{
+				color: rgb(88, 49, 226);
+				font-size: 150%;
+				font-family: 'Times New Roman', Times, serif;
+			}
+			#f1
+			{
+                font-size: 150%;
+                border-radius: 25%;
+                background-color: blueviolet;
+                border-color: rgb(192, 216, 238);
+                text-align: center;
+				color: rgb(233, 182, 186);
+			}
+            #para
+            {
+                padding: 0px;
+                clear: both;
+                font-size: 120%;
+            }
+		</style>
+        <script>
+            function factorial()
+            {
+                var n = document.getElementById("num").value;
+                var i,fact=1;
+                for(i=1;i<=n;i++)
+                {
+                    fact = fact * i;
+                }
+                document.getElementById("fact").innerHTML="Factorial of " + n +" is "+fact ;
+            }
+        </script>
+    </head>
+    <body bgcolor="lightgreen">
+        <h1><div id="f1">Factorial </div> </h1>
+        <div id="main">
+        <p id="para">Enter Number for Factorial: </p>
+        <input type="text" id="num">
+        <button type="button" name="fac" onclick=factorial()>Find Factorial</button>
+        <h2 id="fact"> Factorial is :  </h2>
+        </div>
+    </body>
+</html>

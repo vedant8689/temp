@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title>Merge Array</title>
+        <style>
+            h1{
+				border-color: rgb(192, 216, 238);
+				color: rgb(51, 63, 235);
+                padding: 2px;
+                text-align: center;
+                font-size:250%;
+                height: 20px;
+                padding: 5px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body bgcolor="lightgreen">
+        <h1>
+            Creating JavaScript for Merging Two Array 
+		</h1>
+    </body>
+    <script>
+        var a = [1,2,3,4];
+        var b = [2,3,5,6];
+        document.writeln("<b>A: "+a.join(" ")+"<br>");
+        document.writeln("B: "+b.join(" ")+"<br>");
+        var merge = a.concat(b)
+        merge.sort(function(a,b){ return a-b})
+        for(i=0 ; i<merge.length ; i++){
+            if(merge[i]==merge[i+1]){
+                delete merge[i+1]
+            }
+        }
+        document.writeln("Merged Arrays: "+merge.join(" ")+"<br></b>");
+    </script>
+</html>

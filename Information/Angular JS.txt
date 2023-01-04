@@ -1,0 +1,5 @@
+Angular JS
+8/4/2022
+
+open source web application framework, now maintained by Google.
+stcutural framework fro dynamic web application

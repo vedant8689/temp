@@ -1,0 +1,111 @@
+<html>
+    <head>
+        <title>Angular JS</title>
+        <style>
+            .table-design{
+                border: 4px solid rgb(113, 113, 146);
+                font-size: larger;
+                padding: 40px;
+                background-image: linear-gradient(to left,rgb(37, 226, 247),rgb(173, 182, 183) );
+            }
+            .tabl1{
+                border: 4px solid rgb(83, 83, 121);
+                font-size: larger;
+                padding: 75px;
+                background-image: linear-gradient(to right,rgb(132, 130, 209),rgb(246, 147, 236) );
+            }
+            .first-header{
+                border: 1px solid rgb(168, 144, 144);
+                padding: 10px;
+                margin-left: 20px;
+                margin-right: 20px;
+                background-color: rgb(183, 201, 195);
+            }
+        </style>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body bgcolor="lightblue">
+    <div ng-app="myApp" ng-controller="myCtrl">
+
+        <h1 align="center" class="first-header">Use of Expression Data Binding and Controller</h1>>
+        <table align="center" class="table-design">
+            <th colspan="2" >Enter Information</th>
+            <tr>
+                <td>First Name</td>
+                <td><input type="text" ng-model="firstname"></td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" ng-model="lastname"></td>
+            </tr>
+            <tr>
+                <td>Age</td>
+                <td><input type="number" ng-model="age"></td>
+            </tr>
+            <tr>
+                <td>Birth Date</td>
+                <td><input type="date" ng-model="birthdate"></td>
+            </tr>
+            <tr>
+                <td>Address</td>
+                <td><textarea name="" id="" cols="30" rows="10" ng-model="address"></textarea></td>
+            </tr>
+            <tr>
+                <td>Contact No.</td>
+                <td><input type="tel" ng-model="phone"></td>
+            </tr>
+            <tr>
+                <td>Email-ID</td>
+                <td><input type="mail" ng-model="email"></td>
+            </tr>
+        </table>
+
+        <br><br><br>
+
+        <table align="center" class="tabl1">
+            <th colspan="2">Displaying Information</th>
+            <tr>
+                <td>First Name : </td>
+                <td>{{firstname}}</td>
+            </tr>
+            <tr>
+                <td>Last Name : </td>
+                <td>{{lastname}}</td>
+            </tr>
+            <tr>
+                <td>Age : </td>
+                <td>{{age}}</td>
+            </tr>
+            <tr>
+                <td>Birth Date : </td>
+                <td>{{birthdate}}</td>
+            </tr>
+            <tr>
+                <td>Address : </td>
+                <td>{{address}}</td>
+            </tr>
+            <tr>
+                <td>Contact No. : </td>
+                <td>{{phone}}</td>
+            </tr>
+            <tr>
+                <td>Email ID : </td>
+                <td>{{email}}</td>
+            </tr>
+        </table>
+    </div>
+    
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('myCtrl', function($scope) {
+            $scope.firstname = "";
+            $scope.lastname = ""; 
+            $scope.age="";  
+            $scope.birthdate="";    
+            $scope.address="";   
+            $scope.phone="";
+            $scope.email="";
+        });
+    </script>
+    </body>
+</html>                           

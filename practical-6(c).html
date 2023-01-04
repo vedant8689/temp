@@ -1,0 +1,201 @@
+<html>
+    <head>
+        <title>Practical 6c</title>
+        <script>
+        function valid(){
+            var Email = /[0-9]{2,2}[a-zA-Z]{3,3}[0-9]{3,3}nirmauni.ac.in$/;
+            var number = /^[0-9]{10}/;
+            var password = /^(?=.\d)(?=.[a-z])(?=.[A-Z])(?=.[^a-zA-Z0-9])(?!.*\s).{8,15}$/;
+            var alphabets = /^[a-zA-Z]+$/;
+            var n1 = document.getElementsByName("First_Name").value;
+            var n2 = document.getElementByName("Last_Name").value;
+            var pass = document.getElementByName("Password").value;
+            var emid = document.getElementById("Email_Id").value;
+            var contact_number = document.getElementByName("Mobile_Number").value;
+            if(n1=="" || n2==""){
+                window.alert("first name / last name cannot be empty");
+            }
+            if(alphabets.test(n1)==false){
+                window.alert("enter correct first name")
+            }
+            if(alphabets.test(n2)==false){
+                window.alert("enter correct last name")
+            }
+            if(password.test(pass)==false){
+                window.alert("enter correct password");
+            }
+            if(Email.test(emid)==false){
+                window.alert("enter correct email id");
+            }
+            if(number.test(contact_number)==false){
+                window.alert("enter correct contact number");
+            }
+        }
+    </script>
+    </head>
+    <body bgcolor="#FF9966" >
+        <h2 align="center" style="color:black">STUDENT REGISTRATION FORM</h2>
+        <hr color="black"  width="50%" size=4>
+        <br>
+        
+        <form id = "1"  onsubmit = "return valid()">
+            <table align="center" cellpadding = "15" bgcolor="ivory">
+                <tr>
+                    <td><b>FIRST NAME</b><b style = "color:red;">*</b></td>
+                    <td><input type="text" name="First_Name" maxlength="25" >
+                    (max 25 alphabets)
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><b>LAST NAME</b><b style = "color:red;">*</b></td>
+                    <td><input type="text" name="Last_Name" maxlength="25" >
+                    (max 25 alphabets)
+                    </td>
+                    </tr>
+                    
+                    <tr>
+                    <td><b>DATE OF BIRTH</b><b style = "color:red;">*</b></td>
+                    <td>
+                    <input type="date" name="dob" ></td>
+                </tr>
+                
+                <tr>
+                    <td><b>EMAIL ID</b><b style = "color:red;">*</b></td>
+                    <td><input type="email" name="Email_Id" id="Email_Id"  ></td>
+                </tr>
+                
+                <tr>
+                    <td><b>MOBILE NUMBER</b></td>
+                    <td>
+                    <input type="text" name="Mobile_Number" maxlength="10" >
+                    (don't use 0 or +91)
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>PASSWORD</b></td>
+                    <td>
+                    <input type="password" name="Password" minlength="8" >
+                    (uppercase-lowercase letters, special char and digits.)
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><b>Retype-PASSWORD</b></td>
+                    <td>
+                    <input type="password" name="rePassword" minlength="8" >
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><b>SEX</b></td>
+                    <td>
+                    <input type="radio" name="Gender" value="Male" > Male&nbsp; 
+                    <input type="radio" name="Gender" value="Female" > Female 
+                    </td>
+                </tr>
+                
+              <tr>
+                <td><b>YOUR BRANCH</b></td>
+                <td>
+                    <select id="Branch" name="Branch">
+                        <option value="-1">Select Branch:</option>
+                        <option value="CSE">COMPUTER SCIENCE & ENGINEERING</option>
+                        <option value="ECE">ELECTRONICS & COMMUNICATION ENGINEERING</option>
+                        <option value="Mech">ELECTRICAL ENGINEERING</option>
+                        <option value="Elec">MECHANICAL ENGINEERING</option>
+                        <option value="Civil">CIVIL ENGINEERING</option>
+                        <option value="Chem">CHEMICAL ENGINEERING</option>
+                        
+                        </select>
+                </td>
+                </tr>
+                
+        <tr>
+                    <td><b>PREVIOUS SEM RESULT</b></td>
+                    <td>
+                    <table>
+                    <tr>
+                    <td align="center"><b>Sr.No.</b></td>
+                    <td align="center"><b>SEMESTER</b></td>
+                    <td align="left"><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SPI</b></td>
+                    <td align="center"><b>Date of Passing</b></td>
+                </tr>
+                
+                <tr>
+                    <td>1</td>
+                    <td>SEM-1</td>
+                    <td><input type="number" name="sem1_spi" step="0.01" min="0" max ="10"></td>
+                    <td><input type="date" name="sem1_dtOfPassing"  ></td>
+                </tr>
+                
+                <tr>
+                    <td>2</td>
+                    <td>SEM-2</td>
+                    <td><input align ="center" type="number" name="sem2_spi" step="0.01" min="0" max ="10"></td>
+                    <td><input type="date" name="sem2_dtOfPassing"  ></td>
+        
+                </tr>
+        
+            <tr>
+                    <td>3</td>
+                    <td>SEM-3</td>
+                    <td><input type="number" name="sem3_spi" step="0.01" min="0" max ="10"></td>
+                    <td><input type="date" name="sem3_dtOfPassing"  ></td>
+        
+                </tr>
+        
+                
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td align="left">(0.00<=SPI<=10.00)</td>
+                <td><td>
+                </tr>
+                </table>
+                
+                </td>
+                </tr>
+                
+        
+                <tr>
+                    <td><b>ADDRESS</b></td>
+                    <td><textarea name="Address" rows="4" cols="30"></textarea></td>
+                </tr>
+                
+                <tr>
+                    <td><b>PIN CODE</b></td>
+                    <td><input type="text" name="Pin_Code" maxlength="6" >
+                    </td>
+                </tr>
+                
+                <tr>
+                    <td><b>COUNTRY</b></td>
+                    <td><input type="text" name="Country" value="INDIA" readonly="readonly" ></td>
+                </tr>
+                
+                <tr>
+                    <td><b>HOBBIES</b> </td>
+                    <td>
+                    <input type="checkbox" name="Hobby_Playingsports" value="pPlayingsports" > Playing Sports
+                    <input type="checkbox" name="Hobby_Travelling" value="Travelling" > Travelling
+                    <input type="checkbox" name="Hobby_Dancing" value="Dancing" > Dancing
+                    <input type="checkbox" name="Hobby_Music" value="Music" > Listening Music
+                    <br> Other :-
+                    <input type="text" name="Other_Hobby" maxlength="30" >
+                    </td>
+                </tr>
+                
+                
+                <tr>
+                <td colspan="2" align="center">
+                <input type="submit" value="Submit" style="background-color: red; color: white;" >
+                <input type="reset" value="Reset">
+                </td>
+                </tr>
+            </table>
+        </form>
+         
+        </body>
+</html>

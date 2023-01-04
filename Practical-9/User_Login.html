@@ -1,0 +1,86 @@
+<html>
+    <head>
+        <title>User Login</title>
+        <link rel="stylesheet" href="CSS_Login.css" type="text/css">
+        <script>
+            function validate()
+            {
+                var f_name=document.getElementById('fname_input').value;
+                var l_name=document.getElementById('lname_input').value;
+                var email_input=document.getElementById('email_input').value;
+                var phno_input=document.getElementById('phno_input').value;
+                var message = "";
+                var alpha_strict = /[^A-Z^a-z]/;
+                var num_strict = /[^0-9]/;
+                if(f_name=="")
+                    message = message.concat("Enter first name\n");
+                else
+                {
+                    if(alpha_strict.test(f_name))
+                        message = message.concat("First Name should contain letters only\n");
+                }
+                if(l_name=="")
+                    message = message.concat("Enter last name\n");
+                else
+                {
+                    if(alpha_strict.test(l_name))
+                        message = message.concat("Last Name should contain letters only\n");
+                }
+                if(phno_input=="")
+                    message = message.concat("Enter Phone Number\n");
+                else
+                {
+                    if(phno_input.length != 10)
+                        message = message.concat("Phone number length improper\n")
+                    else if(num_strict.test(phno_input))
+                        message = message.concat("Phone number should be numeric\n");
+                }
+                if(message!="")
+                    alert(message);
+            }
+        </script>
+    </head>
+    <body>
+    <div id="wrap">
+        <div id="form">
+            <div id="Heading" class="content">
+                <p>Create Account:</p>
+            </div>
+            <div id="fname" class="content">
+                <span>First Name: </span>
+                <input type="text" pattern="[A-Za-z]" id="fname_input" placeholder="Enter your First name">
+            </div>
+            <div id="lname" class="content">
+                <span>Last Name: </span>
+                <input type="text" pattern="[A-Za-z]" id="lname_input" placeholder="Enter your Last name">
+            </div>
+            <div id="email" class="content">
+                <span>Email: </span>
+                <input type="text" placeholder="Enter E-Mail Address" id="email_input">
+            </div>
+            <div id="phno" class="content">
+                <span>Phone Number: </span>
+                <input type="text" placeholder="Enter your Phone Number" id="phno_input" pattern="[0-9]{10}">
+            </div>
+            <div id="address" class="content">
+                <label for="add">Address:<br></label> 
+                <textarea style="resize:none" rows="10" cols="46" id="add" placeholder="Type address here" noresize></textarea>
+            </div>
+            <div id="pay_method" class="content">
+                <span>Preferred mode of Payment: </span>
+                <label for="method"></label>
+                <select name="method" id="dropdown">
+                    <option value="UPI">UPI</option>
+                    <option value="Cash on Delivery (COD)">Cash on Delivery (COD)</option>
+                    <option value="Net banking">Net banking</option>
+                    <option value="Site Wallet">Site Wallet</option>
+                </select>
+            </div>
+            <div id="submit" class="content">
+                <input type="button" name="submit" value="Submit" onclick="validate()">
+                <input type="button" name="Reset" value="Reset" style="background-color:rgb(255, 152, 152)">
+            </div>
+        </div>
+    </div>
+    </body>
+</html>

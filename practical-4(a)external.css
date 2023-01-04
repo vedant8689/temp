@@ -1,0 +1,28 @@
+p.specific {
+	text-align:Center;
+	font: bold 40px Helvetica;
+	color:green;
+}
+p.external {
+	margin-left:40px;
+	text-align:left;
+	font: bold 35px Times New Roman;
+}
+li.genre {
+	border-style:solid;
+	border-width:medium;
+	border-color: SpringGreen;
+	padding: 5px;
+	Background-color:Ivory;
+	font: bold 30px Times New Roman;
+	color : ForestGreen;
+	Border-radius:10px;
+}
+li.hollywood {
+	font: bold 20px Times New Roman;
+	color : rgb(255, 72, 0);
+}
+li.bollywood {
+	font: bold 20px Times New Roman;
+	color : rgb(0, 60, 255);
+}

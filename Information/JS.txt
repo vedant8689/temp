@@ -1,0 +1,132 @@
+JavaScript JS
+
+23/3/2022
+
+When no default arguement given to split function then by default it will split character by character.
+
+Number Data Type
+Numbers are stored as double precision floating point numbers.
+Value/Mantissa : 0-52 bits for storing numbers and 11 bits for exponent(52-62) and 1 sign bit(63)
+By default JS displays base 10 number.
+using toString() we can change the bas of the number i.e., from decimal to octal,hexadecimal and binary.
+NaN is a reserved with indicating that a value is not a number.
+var x = 45;
+var res = x/"10";
+value of res would be 4.5 i.e., it converts string number to number data type.
+isNaN() to find the value entered is a number or not. i.e., number if there then it returns false and if not a number then returns false.
+type of NaN is number 
+NaN + 5 --> output will be NaN.
+Numbers can also be defined as objects with the keyword number.
+Number.MAX_VALUE --> Maximum allowed value
+Number.MIN_VALUE --> Minimum allowed value 
+toString() --> converts a number to string and converts the base of a number
+valueOf() --> returns the primitive value of a number
+
+25/3/2022
+
+Math object
+
+power,sin,max,min,random number generation
+Math.SQRTfirst-value_second-value e.g. Math.SQRT1_2 returns sqrt of 1/2
+random()-->
+random generates a random number between [0,1)
+to generate random number between 0 to 100 --> 
+var x = Math.floor(0+(Math.random()*100)) --> (0,100) 0 to 99 means 100 (i.e., number of possibilites) last i.e., 100 indicates 
+the number of random number to be generated starting from 0 to 99.
+document.write("<h2> Random number between 0- 100 is "+x+"</h2>")
+
+Date Object
+
+Date() returns current date with all the parameters
+By default JS has set default/initial value of date --> Jan 1 1970 5:30
+JS date can  be written as string
+4 ways to initiate a date
+1. new Date() if no parameter is passed it takes system date
+2. new Date(milliseconds)
+3. new Date(date String)
+2. new Date(year, month, date, hour, second, date....)
+to extract year, month, date particular methods are there : 
+d= new Date()
+x=g.getHours()
+getDate()--> returns the day of month(1-31) Fri Mar 25 2022
+getMonth()--> returns from (0-11) 0--> January....
+getFullYear()--> four digits     getHours()--> (0-23)
+getDay()-->returns the day of week (0-6) 0->Sunday....
+getTime()--> returns number milliseconds since Jan1,1970
+getUTCDate()--> related to GMT Date
+setDate()--> for setting system date  (various set methods)
+
+Boolean Object
+
+0 / -0 / "" / undefined / null / NaN -> false
+var x = Boolean(10>9)
+1 -> true
+
+Break Continue
+
+Break -> jumps out of a loop
+continue -> jumps over one interation in a loop
+
+var cars= ["A", "B", "C"]
+var text=""
+list:
+{
+text += cars[0] + "<br>"
+text += cars[1] + "<br>"
+break list;//breaks a particular block
+}
+document.write(text)
+
+Type Conversion
+
+Number("10 6")--> convert but displays NaN
+Number("  10")--> 10
+string s= "20abc40"
+parseInt(s) --> 20
+string s1="abc40"
+parseInt("10 6") --> 10
+parseInt(s1) --> no output first must be a number --> NaN
+NaN--> displayed when string can't be converted into a number. 
+
+Hoisting
+
+in JS after using the variable we can declare the variable
+ 
+User Defined Function
+function myFirstFunction(a,b) 
+
+30/3/2022
+
+Browser Object Model
+for interacton with browser
+The window object is supported by all browsers, represents browser's window. e.g. alert
+Global variables are properties of window objects
+Window size --> used to determine the size of browser window(browser viewport not including toolbar ad scrollbar)
+window.innerHeight, window.innerWidth etc.
+
+Some method:
+window.open() -> create an new window
+window.close() -> close a window
+window.moveTo() -> to move a window to another window
+window.resizeTo() -> to resize a current window
+
+Screen Properties
+screen.width -> current width of screen
+screen.height -> current height of screen
+screen.availWidth -> available width
+screen.availHeight -> available height
+screen.colorDepth
+screen.pixelDepth
+
+Confirm Box
+is oftern used if you want the user to verify or accept something
+When a confirm box pops up the user will have to click either OK or Cancel to proceed
+Syntax: window.confirm()
+function myFUnction(){
+	var x;
+	if(confirm("Press a button" == true))
+		x="You pressed OK";
+	else
+		x="You pressed Cancel";
+	document.getElementById("demo").innerHTML=x;
+	}	s

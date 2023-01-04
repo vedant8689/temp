@@ -1,0 +1,106 @@
+<html>
+    <head>
+        <title> Registration Form</title>
+        <style>
+            h1{
+                color: rgb(137, 139, 234);                
+                background-color: rgb(199, 156, 240);
+                text-align: center;
+                font-size:110%;
+                text-align: center;
+            }
+            #s1{
+                color:tomato;
+                border-color: red;
+                text-justify: auto;
+            }
+        </style>
+    </head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+    <body bgcolor="lightblue">
+        <div ng-app="MYAPP" ng-controller="MYCRTL">
+            <table align="center" border="5px">
+                <tr>
+                    <td>First Name</td>
+                    <td><input type="text" ng-model="FirstName"></td>
+                </tr>
+                <tr>
+                    <td>Last Name</td>
+                    <td><input type="text" ng-model="LastName"></td>
+                </tr>
+                <tr>
+                    <td>Age</td>
+                    <td><input type="number" ng-model="Age"></td>
+                </tr>
+                <tr>
+                    <td>Birth Date</td>
+                    <td><input type="date" ng-model="BirthDate"></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><textarea cols="30" rows="10" ng-model="Address"></textarea></td>
+                </tr>
+                <tr>
+                    <td>Contact No.</td>
+                    <td><input type="tel" ng-model="Phone"></td>
+                </tr>
+                <tr>
+                    <td>Email-ID</td>
+                    <td><input type="mail" ng-model="Email"></td>
+                </tr>
+                <tr>
+                    <td> Amount </td>
+                    <td> <input type="number" ng-model="Amount"> </td>
+                </tr>
+            </table>
+            <h1>Information</h1>
+            <table align="center" id="s1">                
+                <tr>
+                    <td>First Name : </td>
+                    <td>{{FirstName | uppercase}}</td>
+                </tr>
+                <tr>
+                    <td>Last Name : </td>
+                    <td>{{LastName | lowercase}}</td>
+                </tr>
+                <tr>
+                    <td>Age : </td>
+                    <td>{{Age | number}}</td>
+                </tr>
+                <tr>
+                    <td>Birth Date : </td>
+                    <td>{{BirthDate}}</td>
+                </tr>
+                <tr>
+                    <td>Address : </td>
+                    <td>{{Address}}</td>
+                </tr>
+                <tr>
+                    <td>Contact No. : </td>
+                    <td>{{Phone}}</td>
+                </tr>
+                <tr>
+                    <td>Email ID : </td>
+                    <td>{{Email}}</td>
+                </tr>
+                <tr>
+                    <td>Amount :</td>
+                    <td>{{Amount | currency}}</td>
+                </tr>
+            </table>
+        </div> 
+        <script>
+            var app = angular.module('MYAPP', []);
+            app.controller('MYCRTL', function($scope) {
+                $scope.firstname = "";
+                $scope.lastname = ""; 
+                $scope.age="";  
+                $scope.birthdate="";    
+                $scope.address="";   
+                $scope.phone="";
+                $scope.email="";
+                $scope.amount="";
+            });
+        </script>
+    </body>
+</html>
